@@ -1,0 +1,7 @@
+query getPost($slug: ID!) {
+  article_by_id(id: $slug) {
+    title
+    subtitle
+    content
+  }
+}

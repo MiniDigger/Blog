@@ -1,0 +1,9 @@
+query getPosts {
+    article {
+        slug
+        title
+        subtitle
+        content
+        date_published
+    }
+}

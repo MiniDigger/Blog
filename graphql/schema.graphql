@@ -1,0 +1,142 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+type Query {
+    article(filter: article_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [article]
+    article_by_id(id: ID!): article
+    blog: blog
+    project(filter: project_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [project]
+    project_aggregated(filter: project_filter, groupBy: [String], search: String, sort: [String]): [project_aggregated]
+    project_by_id(id: ID!): project
+}
+
+type article {
+    content: String
+    date_published: Date
+    date_published_func: datetime_functions
+    slug: ID
+    subtitle: String
+    title: String
+}
+
+type blog {
+    description: String
+    id: ID
+    title: String
+}
+
+type datetime_functions {
+    day: Int
+    hour: Int
+    minute: Int
+    month: Int
+    second: Int
+    week: Int
+    weekday: Int
+    year: Int
+}
+
+type project {
+    description: String
+    id: ID
+    link: String
+    title: String
+}
+
+type project_aggregated {
+    avg: project_aggregated_fields
+    avgDistinct: project_aggregated_fields
+    count: project_aggregated_fields
+    countDistinct: project_aggregated_fields
+    group: JSON
+    max: project_aggregated_fields
+    min: project_aggregated_fields
+    sum: project_aggregated_fields
+    sumDistinct: project_aggregated_fields
+}
+
+type project_aggregated_fields {
+    id: Float
+}
+
+input article_filter {
+    _and: [article_filter]
+    _or: [article_filter]
+    content: string_filter_operators
+    date_published: date_filter_operators
+    date_published_func: datetime_function_filter_operators
+    slug: string_filter_operators
+    subtitle: string_filter_operators
+    title: string_filter_operators
+}
+
+input date_filter_operators {
+    _eq: String
+    _gt: String
+    _gte: String
+    _lt: String
+    _lte: String
+    _neq: String
+    _nnull: Boolean
+    _null: Boolean
+}
+
+input datetime_function_filter_operators {
+    day: number_filter_operators
+    hour: number_filter_operators
+    minute: number_filter_operators
+    month: number_filter_operators
+    second: number_filter_operators
+    week: number_filter_operators
+    weekday: number_filter_operators
+    year: number_filter_operators
+}
+
+input number_filter_operators {
+    _eq: Float
+    _gt: Float
+    _gte: Float
+    _in: [Float]
+    _lt: Float
+    _lte: Float
+    _neq: Float
+    _nin: [Float]
+    _nnull: Boolean
+    _null: Boolean
+}
+
+input project_filter {
+    _and: [project_filter]
+    _or: [project_filter]
+    description: string_filter_operators
+    id: number_filter_operators
+    link: string_filter_operators
+    title: string_filter_operators
+}
+
+input string_filter_operators {
+    _contains: String
+    _empty: Boolean
+    _ends_with: String
+    _eq: String
+    _in: [String]
+    _ncontains: String
+    _nempty: Boolean
+    _nends_with: String
+    _neq: String
+    _nin: [String]
+    _nnull: Boolean
+    _nstarts_with: String
+    _null: Boolean
+    _starts_with: String
+}
+
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSON
+
+"ISO8601 Date values"
+scalar Date
