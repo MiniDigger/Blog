@@ -84,7 +84,7 @@ p {
 }
 
 a {
-  color: var(--font-color);
+  color: var(--link-color);
   text-decoration: none;
   font-weight: bold;
 }

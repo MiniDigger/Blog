@@ -5,8 +5,8 @@
         <NuxtLink :to="post?.slug">
           <h1>{{ post?.title }}</h1>
           <h2>{{ post?.subtitle }}</h2>
-          <small>{{ post?.date_published}}</small>
         </NuxtLink>
+        <small>posted on {{ post?.date_published}}</small>
       </article>
     </Loader>
   </div>
@@ -40,7 +40,7 @@ article.teaser  {
   background: var(--bg-color-dark);
 }
 .teaser a {
-  color: var(--font-color);
+  color: var(--link-color);
   text-decoration: none;
 }
 

@@ -23,6 +23,7 @@
   --bg-color: #1f2235;
   --bg-color-dark: #23263a;
   --font-color: #dfdfdf;
+  --link-color: #ffffff;
   --grid: minmax(1rem, 10%) minmax(calc(100vw - 2rem), 2fr) minmax(1rem, 10%)
 }
 
@@ -38,6 +39,10 @@ html {
   font-style: normal;
   color: var(--font-color);
   background: var(--bg-color);
+}
+
+html p {
+  line-height: 1.3rem;
 }
 
 .main {
