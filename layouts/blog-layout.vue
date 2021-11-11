@@ -6,6 +6,7 @@
         <NavList />
       </nav>
     </header>
+    <Backdrop />
     <section>
       <slot />
     </section>
@@ -64,13 +65,20 @@ header {
     "brand nav .";
   background: var(--bg-color-dark);
   margin-bottom: 1rem;
+  z-index: 2;
 }
 
 nav {
   grid-area: nav;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+@media screen and (min-width: 700px) {
+  nav {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .brand {
@@ -80,6 +88,7 @@ nav {
   margin-left: 1rem;
   font-weight: 700;
   font-size: 2rem;
+  z-index: 2;
 }
 
 section {
@@ -103,11 +112,11 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
 </style>
 <script lang="ts">
 import NavList from "~/components/NavList"
+import Backdrop from "~/components/Backdrop.vue"
 export default {
-  components: { NavList }
+  components: { Backdrop, NavList }
 }
 </script>
