@@ -4,3 +4,4 @@ graphql/generated
 *.iml
 .idea
 *.log
+.output

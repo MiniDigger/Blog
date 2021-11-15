@@ -36,16 +36,17 @@ import Markdown from "~/components/Markdown.vue"
 import Loader from "~/components/Loader.vue"
 import { computed, ref } from "@vue/reactivity"
 
+let route = useRoute()
 let {
   fetching,
   error,
   data
 } = await useGetPostQuery({
-  variables: { slug: useRoute().params.slug as string }
+  variables: { slug: route.params.slug as string }
 })
 const post = data.value?.article_by_id!
 
-const preview = ref(false)
+const preview = ref(route.query.preview || false)
 
 const displayPost = computed(() => {
   return post && (preview.value || post.date_published < new Date().toISOString())
