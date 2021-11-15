@@ -102,6 +102,7 @@ footer {
 
 .main-footer span {
   flex: 1 1 100%;
+  line-height: 1.2;
 }
 
 @media screen and (max-width: 400px) {
