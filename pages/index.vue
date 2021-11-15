@@ -8,7 +8,7 @@
       <p>At night, I found a passion in the Open Source Community, especially around the modding community of Minecraft, but also other projects. <NuxtLink to="/projects">Learn more</NuxtLink>.</p>
     </div>
     <div class="image">
-      <img src="assets/faded.png">
+      <img src="~/assets/faded.png">
     </div>
   </div>
 </template>
