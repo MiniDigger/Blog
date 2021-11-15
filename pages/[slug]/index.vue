@@ -35,6 +35,8 @@ import { useRoute } from "vue-router"
 import Markdown from "~/components/Markdown.vue"
 import Loader from "~/components/Loader.vue"
 import { computed, ref } from "@vue/reactivity"
+import { useBlogMeta } from "~/composables/meta"
+import { useMeta } from "#meta"
 
 let route = useRoute()
 let {
@@ -51,6 +53,9 @@ const preview = ref(route.query.preview || false)
 const displayPost = computed(() => {
   return post && (preview.value || post.date_published < new Date().toISOString())
 })
+
+useMeta(useBlogMeta(displayPost.value && post?.title || "Blog loading...", displayPost.value && post?.subtitle || "Loading..."));
+
 </script>
 
 <script lang="ts">

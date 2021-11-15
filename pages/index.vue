@@ -13,6 +13,13 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import { useBlogMeta } from "~/composables/meta"
+import { useMeta } from "#meta"
+
+useMeta(useBlogMeta("Home", "Mini's Corner on the internet"));
+</script>
+
 <script lang="ts">
 export default {
   name: "HomePage",

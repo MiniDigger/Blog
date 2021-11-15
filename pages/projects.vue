@@ -17,6 +17,10 @@
 import { useGetProjectsQuery } from "~/graphql/generated/operations"
 import Loader from "~/components/Loader.vue"
 import Markdown from "~/components/Markdown.vue"
+import { useBlogMeta } from "~/composables/meta"
+import { useMeta } from "#meta"
+
+useMeta(useBlogMeta("Projects", "Some of the projects I worked on"));
 
 let {
   fetching,

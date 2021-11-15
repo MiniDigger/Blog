@@ -15,6 +15,10 @@
 <script setup lang="ts">
 import { useGetPostsQuery } from "~/graphql/generated/operations"
 import Loader from "~/components/Loader.vue"
+import { useBlogMeta } from "~/composables/meta"
+import { useMeta } from "#meta"
+
+useMeta(useBlogMeta("Projects", "My blog"));
 
 let {
   fetching,
