@@ -22,8 +22,8 @@ const menuButton = ref()
 const mobile = computed(() => windowWidth.value < 700)
 
 onMounted(() => {
-  onResize()
   nextTick(() => {
+    onResize()
     window.addEventListener("resize", onResize)
     window.addEventListener("click", onClick)
   })
@@ -45,8 +45,10 @@ function onResize() {
 }
 
 function toggleMenu() {
-  document.getElementsByTagName("body")[0].classList.toggle("modal")
-  menuOpen.value = !menuOpen.value
+  if (mobile.value) {
+    document.getElementsByTagName("body")[0].classList.toggle("modal")
+    menuOpen.value = !menuOpen.value
+  }
 }
 
 // close on outside click
@@ -81,7 +83,7 @@ a,
   position: absolute;
   left: 0;
   top: 59px;
-  width: 100%;
+  width: calc(100% - 4rem);
   padding: 2rem;
   background-color: var(--bg-color-dark);
 }
@@ -89,5 +91,6 @@ a,
 .menu a {
   display: block;
   padding: 1rem 0 1rem 0;
+  width: fit-content;
 }
 </style>

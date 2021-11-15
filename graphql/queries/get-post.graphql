@@ -3,5 +3,6 @@ query getPost($slug: ID!) {
     title
     subtitle
     content
+    date_published
   }
 }

@@ -6,4 +6,5 @@
 
 <script>
 import 'reset-css';
+import 'assets/style.css'
 </script>

@@ -12,38 +12,22 @@
     </section>
     <footer>
       <div class="main-footer">
-        <span>Copyright &copy; {{ new Date().getFullYear() }} MiniDigger. All Rights Reserved</span>
+        <span>Copyright &copy; {{ new Date().getFullYear() }} Martin "MiniDigger" Benndorf</span>
+        <span>Found an error? You can fix it <a href="https://github.com/MiniDigger/Blog">here</a>!</span>
       </div>
     </footer>
   </div>
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 :root {
-  --bg-color: #1f2235;
-  --bg-color-dark: #23263a;
-  --font-color: #dfdfdf;
-  --link-color: #ffffff;
   --grid: minmax(1rem, 10%) minmax(calc(100vw - 2rem), 2fr) minmax(1rem, 10%)
 }
 
 @media screen and (min-width: 700px) {
   :root {
-    --grid: minmax(1rem, 1fr) minmax(250px, 2fr) minmax(1rem, 1fr)
+    --grid: minmax(1rem, 14vw) minmax(60vw, 70vw) minmax(1rem, 14vw)
   }
-}
-
-html {
-  font-family: 'Poppins', sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  color: var(--font-color);
-  background: var(--bg-color);
-}
-
-html p {
-  line-height: 1.3rem;
 }
 
 .main {
@@ -74,6 +58,7 @@ nav {
   justify-content: flex-end;
   align-items: flex-end;
 }
+
 @media screen and (min-width: 700px) {
   nav {
     justify-content: center;
@@ -109,13 +94,26 @@ footer {
 .main-footer {
   grid-area: mainFooter;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 1rem;
+}
+
+.main-footer span {
+  flex: 1 1 100%;
+}
+
+@media screen and (max-width: 400px) {
+  .main-footer {
+    align-items: flex-start;
+  }
 }
 </style>
 <script lang="ts">
 import NavList from "~/components/NavList"
 import Backdrop from "~/components/Backdrop.vue"
+
 export default {
   components: { Backdrop, NavList }
 }

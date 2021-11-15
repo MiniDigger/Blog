@@ -8,6 +8,7 @@
         <h2>
           {{ post.subtitle }}
         </h2>
+        <small>Posted on {{ post.date_published }}</small>
         <Markdown :source="post.content" />
       </article>
     </Loader>
@@ -37,4 +38,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+small {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+</style>

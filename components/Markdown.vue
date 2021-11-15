@@ -57,35 +57,4 @@ article img {
   width: calc(100% - 2rem);
   padding: 0;
 }
-
-pre {
-  overflow: auto;
-}
-
-em {
-  font-style: italic;
-}
-
-h1,h2 {
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-}
-
-p {
-  margin-bottom: 1.5rem;
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: bold;
-}
 </style>

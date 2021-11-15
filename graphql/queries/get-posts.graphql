@@ -1,5 +1,5 @@
 query getPosts {
-    article {
+    article (filter: {status: {_eq: "published"}}){
         slug
         title
         subtitle
