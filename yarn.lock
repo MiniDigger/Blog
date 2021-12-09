@@ -511,10 +511,10 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/core@1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.6.3.tgz#a4ee78fb87828a9cb09e995118b3429e633cd966"
-  integrity sha512-B+IedphnVy7C0L+LrBsdaKD1kZhhiiWya2ROZC8GDRcWPkJEo4iRHb/QsiduraSkO/KbfuR5nI/X6IeB/Zgotw==
+"@envelop/core@1.6.4":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.6.4.tgz#cf596d570428b87a7c8e22ee95b753ec837ccd90"
+  integrity sha512-/cUMG0ZVNwwNOu1ZFxFgzo7DyB17nkwpFZAAidkY+g+yNBWu+V76kwziH5Qdu7ca3Rv4F8u1Y0BWRlvMunb2sQ==
   dependencies:
     "@envelop/types" "1.5.1"
 
