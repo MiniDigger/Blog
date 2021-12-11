@@ -1390,20 +1390,20 @@
   dependencies:
     "@types/node" "*"
 
-"@urql/core@^2.3.4":
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/@urql/core/-/core-2.3.4.tgz#4eb00d6b2c631b031e4ad235fcce1a11ceb09ecd"
-  integrity sha512-KXeR55ONqkTZ2gwNgyFGJEGRp1/jEnyqkFjEguknnG6GFaikAwAX0TMijKcX6ZQ4qE59cDtVEtSbqpVkd9XNmA==
+"@urql/core@^2.3.6":
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/@urql/core/-/core-2.3.6.tgz#ee0a6f8fde02251e9560c5f17dce5cd90f948552"
+  integrity sha512-PUxhtBh7/8167HJK6WqBv6Z0piuiaZHQGYbhwpNL9aIQmLROPEdaUYkY4wh45wPQXcTpnd11l0q3Pw+TI11pdw==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.0"
     wonka "^4.0.14"
 
-"@urql/vue@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@urql/vue/-/vue-0.6.0.tgz#e6a5782c7c000e07ce36da140a4eba15eb11147c"
-  integrity sha512-UiaW4Vw7Oxeqd+2qhv9L0V0dr5mrzc+lvE+zKVDmYHb17kCA7Yr7KufGaJYLsuU06sSS7j3RyIdCT5vfAJjX6Q==
+"@urql/vue@0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@urql/vue/-/vue-0.6.1.tgz#bb315650c5158f862b4065a127690805c7191b79"
+  integrity sha512-sQMWiPMDGpCP+ybF4eMWyR4JXK6U2Fn9KsmdXnP8wRJiUdON+RVIkr44aulcF4yjdCRl0PeQjZAG+0h6HmYdag==
   dependencies:
-    "@urql/core" "^2.3.4"
+    "@urql/core" "^2.3.6"
     wonka "^4.0.14"
 
 "@vercel/nft@^0.17.0":
