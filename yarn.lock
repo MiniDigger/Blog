@@ -1139,10 +1139,10 @@
   resolved "https://registry.yarnpkg.com/@nuxt3-graphql/codegen/-/codegen-0.2.1.tgz#a2b5e4c73a744445a2bd36cdafd5a33c2fead199"
   integrity sha512-607umjX9cMI8wlx1ONmUG7YG0gGAExfZF9bgvS+SO2hHIzQM/pNE8xWzKOaS1ac1UrvRZjcnuj7D7jGXjw4AWA==
 
-"@nuxt3-graphql/urql@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@nuxt3-graphql/urql/-/urql-0.2.1.tgz#f15519cff0c96b3dec74aaa44e206e5a812ea26f"
-  integrity sha512-0wacF6npazchiva3vGWEJxyTvi66YUoXnKCTn8dpqFII5xzZQEav9gUGbczQBjR6CpV+6903/00Ka20AEwfalA==
+"@nuxt3-graphql/urql@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@nuxt3-graphql/urql/-/urql-0.4.0.tgz#152202f55111606768aba4ddf34acc10e33e8ccb"
+  integrity sha512-iQPb0uf6+tcBj7HW0VlZpOAQTTDlj7KbAVQT6az5gevYG9q4w8Jq/N4wPFPCnTg8uIEqI8qHSyUDh4G1ZPiTcw==
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
