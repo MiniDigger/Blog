@@ -1134,10 +1134,10 @@
     webpack-virtual-modules "^0.4.3"
     webpackbar "^5.0.0-3"
 
-"@nuxt3-graphql/codegen@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@nuxt3-graphql/codegen/-/codegen-0.2.1.tgz#a2b5e4c73a744445a2bd36cdafd5a33c2fead199"
-  integrity sha512-607umjX9cMI8wlx1ONmUG7YG0gGAExfZF9bgvS+SO2hHIzQM/pNE8xWzKOaS1ac1UrvRZjcnuj7D7jGXjw4AWA==
+"@nuxt3-graphql/codegen@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@nuxt3-graphql/codegen/-/codegen-0.4.0.tgz#aa5f6490bf611126a822abf295a39e61c814fce8"
+  integrity sha512-gACL99yauUnY/XcJi5zi/CqU0UtvsDNLi+dVkthQVChGBaNYn+ak86uEwcved4DlffFPgyqIni6CN9H6lr6n1Q==
 
 "@nuxt3-graphql/urql@0.4.0":
   version "0.4.0"
