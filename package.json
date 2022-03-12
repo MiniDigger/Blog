@@ -24,7 +24,7 @@
     "prettier": "2.5.0"
   },
   "dependencies": {
-    "highlight.js": "11.4.0",
+    "highlight.js": "11.5.0",
     "remarkable": "2.0.1",
     "reset-css": "5.0.1"
   }
