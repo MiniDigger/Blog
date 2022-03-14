@@ -4,7 +4,7 @@
       <h1>Hello world!</h1>
       <h2>I'm Martin "MiniDigger" Benndorf</h2>
       <p>I am a Software Engineer from Cologne, Germany. The only place on earth where you can drink the dialect we speak! 🍻</p>
-      <p>At day, I work at an insurance company, in the costumer applications team, managing our websites and end-user facing web apps for millions of customers.</p>
+      <p>At day, I work at an insurance company, in the customer applications team, managing our websites and end-user facing web apps for millions of customers.</p>
       <p>At night, I found a passion in the Open Source Community, especially around the modding community of Minecraft, but also other projects. <NuxtLink to="/projects">Learn more</NuxtLink>.</p>
     </div>
     <div class="image">
