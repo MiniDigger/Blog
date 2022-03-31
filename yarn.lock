@@ -511,17 +511,17 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/core@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.1.0.tgz#f20ae5a12eb87dad1ba1c9e226b6900182400277"
-  integrity sha512-H7k8A0eWoQZBCduYVRIhasEFPrY4qkV/ul1rfQZ1inM2S3cgCwKsPZlS5sPc7KowvDJcjttDX5n6FgfFUVacFA==
+"@envelop/core@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.2.0.tgz#5fbcee51200d2338624f1194e20e0e078797e9a4"
+  integrity sha512-lyW9k/YjrXcQrboMM6ub7+rVNOjgSqCfC3wyApNpG/on7p5BQrbVU8xKAINZO+6lc9Ewfrhm8DorVvomP4PgKg==
   dependencies:
-    "@envelop/types" "2.0.0"
+    "@envelop/types" "2.1.0"
 
-"@envelop/types@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-2.0.0.tgz#5e357cdc7c9d19b3283432540f757a0f2e22d204"
-  integrity sha512-X6KUeCikfr6/yx02WiClIQwx3mZJbR8m20/UEfpLC8QjcVG3Vox+QK1EOnXiZkvpQVe3FA05Rp0o+PCla30idA==
+"@envelop/types@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-2.1.0.tgz#6587a8762063ee09aa6e352a02d36550f1442ac0"
+  integrity sha512-aI49GOoqRKEoIqBfnDLphwFwQYcSNAHfS+ZRBTjSB78KXRJbvZQ4oB5O3yW/lzywC0ZSJTlPhcGcEwr9dlgJyQ==
 
 "@eslint/eslintrc@^1.2.1":
   version "1.2.1"
