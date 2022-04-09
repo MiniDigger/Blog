@@ -6,7 +6,7 @@
     "format": "prettier .  --write --ignore-path .gitignore"
   },
   "devDependencies": {
-    "@envelop/core": "2.3.0",
+    "@envelop/core": "2.3.1",
     "@graphql-codegen/cli": "2.6.2",
     "@graphql-codegen/typescript": "2.4.8",
     "@graphql-codegen/typescript-operations": "2.3.5",
