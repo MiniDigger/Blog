@@ -15,7 +15,7 @@
     "@nuxt3-graphql/urql": "0.4.0",
     "@types/markdown-it": "12.2.3",
     "@types/remarkable": "2.0.3",
-    "@urql/vue": "0.6.1",
+    "@urql/vue": "0.6.2",
     "eslint": "8.13.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-vue": "8.6.0",
