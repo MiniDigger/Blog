@@ -19,7 +19,7 @@
     "eslint": "8.14.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-vue": "8.7.1",
-    "graphql": "16.3.0",
+    "graphql": "16.4.0",
     "nuxt3": "latest",
     "prettier": "2.6.2"
   },
