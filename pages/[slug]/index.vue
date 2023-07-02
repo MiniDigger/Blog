@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Loader :fetching="fetching" :error="error">
+    <Loader :fetching="pending" :error="error">
       <article v-if="displayPost">
         <h1>
           {{ post.title }}
@@ -11,13 +11,9 @@
         <small>Posted on {{ post.date_published }}</small>
         <Markdown :source="post.content" />
       </article>
-      <div class="not-found" v-else>
-        <h1>
-          404
-        </h1>
-        <h2>
-          There is nothing here!
-        </h2>
+      <div v-else class="not-found">
+        <h1>404</h1>
+        <h2>There is nothing here!</h2>
         <small>Yet, anyways</small>
         <ul>
           <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -30,39 +26,35 @@
 </template>
 
 <script setup lang="ts">
-import { useGetPostQuery } from "~/graphql/generated/operations"
 import { useRoute } from "vue-router"
+import { computed, ref } from "vue"
 import Markdown from "~/components/Markdown.vue"
 import Loader from "~/components/Loader.vue"
-import { computed, ref } from "@vue/reactivity"
 import { useBlogMeta } from "~/composables/meta"
-import { useMeta } from "#meta"
+import { definePageMeta, useAsyncGql, useHead } from "#imports"
 
-let route = useRoute()
-let {
-  fetching,
-  error,
-  data
-} = await useGetPostQuery({
-  variables: { slug: route.params.slug as string }
+const route = useRoute()
+const { data, pending, error } = await useAsyncGql("getPost", {
+  slug: route.params.slug as string,
 })
-const post = data.value?.article_by_id!
-
+const post = computed(() => data.value.article_by_id!)
 const preview = ref(route.query.preview || false)
 
 const displayPost = computed(() => {
-  return post && (preview.value || post.date_published < new Date().toISOString())
+  return (
+    post.value &&
+    (preview.value || post.value.date_published < new Date().toISOString())
+  )
 })
 
-useMeta(useBlogMeta(displayPost.value && post?.title || "Blog loading...", displayPost.value && post?.subtitle || "Loading..."));
+useHead(
+  useBlogMeta(
+    (displayPost.value && post.value.title) || "Blog loading...",
+    (displayPost.value && post.value.subtitle) || "Loading..."
+  )
+)
 
-</script>
-
-<script lang="ts">
-export default {
-  name: "PostPage",
-  layout: "blog-layout"
-}
+definePageMeta({ layout: "blog-layout" })
 </script>
 
 <style scoped>

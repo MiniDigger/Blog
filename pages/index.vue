@@ -3,28 +3,34 @@
     <div class="title">
       <h1>Hello world!</h1>
       <h2>I'm Martin "MiniDigger" Benndorf</h2>
-      <p>I am a Software Engineer from Cologne, Germany. The only place on earth where you can drink the dialect we speak! 🍻</p>
-      <p>At day, I work at an insurance company, in the customer applications team, managing our websites and end-user facing web apps for millions of customers.</p>
-      <p>At night, I found a passion in the Open Source Community, especially around the modding community of Minecraft, but also other projects. <NuxtLink to="/projects">Learn more</NuxtLink>.</p>
+      <p>
+        I am a Software Engineer from Cologne, Germany. The only place on earth
+        where you can drink the dialect we speak! 🍻
+      </p>
+      <p>
+        At day, I work at an insurance company, in the customer applications
+        team, managing our websites and end-user facing web apps for millions of
+        customers.
+      </p>
+      <p>
+        At night, I found a passion in the Open Source Community, especially
+        around the modding community of Minecraft, but also other projects.
+        <NuxtLink to="/projects">Learn more</NuxtLink>.
+      </p>
     </div>
     <div class="image">
-      <img src="~/assets/faded.png">
+      <img src="~/assets/faded.png" alt="Picture of me" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useBlogMeta } from "~/composables/meta"
-import { useMeta } from "#meta"
+import { definePageMeta, useHead } from "#imports"
 
-useMeta(useBlogMeta("Home", "Mini's Corner on the internet"));
-</script>
+useHead(useBlogMeta("Home", "Mini's Corner on the internet"))
 
-<script lang="ts">
-export default {
-  name: "HomePage",
-  layout: "blog-layout",
-}
+definePageMeta({ layout: "blog-layout" })
 </script>
 
 <style scoped>
@@ -50,7 +56,7 @@ h2 {
   font-size: 2rem;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
   .title {
     flex: 0 0 100%;
     order: 2;

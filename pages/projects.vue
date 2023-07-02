@@ -1,12 +1,18 @@
 <template>
   <div>
-    <Loader :fetching="fetching" :error="error">
+    <Loader :fetching="pending" :error="error">
       <div class="row">
-        <article v-for="project in projects" class="project">
+        <article
+          v-for="project in projects"
+          :key="project.title!"
+          class="project"
+        >
           <h1>{{ project?.title }}</h1>
           <Markdown :source="project?.description" />
-          <a v-if="project?.link.startsWith('http')" :href="project?.link">Learn More!</a>
-          <NuxtLink v-else :to="project?.link">Learn more!</NuxtLink>
+          <a v-if="project?.link?.startsWith('http')" :href="project?.link">
+            Learn More!
+          </a>
+          <NuxtLink v-else :to="project?.link!">Learn more!</NuxtLink>
         </article>
       </div>
     </Loader>
@@ -14,27 +20,18 @@
 </template>
 
 <script setup lang="ts">
-import { useGetProjectsQuery } from "~/graphql/generated/operations"
+import { computed } from "vue"
 import Loader from "~/components/Loader.vue"
 import Markdown from "~/components/Markdown.vue"
 import { useBlogMeta } from "~/composables/meta"
-import { useMeta } from "#meta"
+import { definePageMeta, useAsyncGql, useHead } from "#imports"
 
-useMeta(useBlogMeta("Projects", "Some of the projects I worked on"));
+useHead(useBlogMeta("Projects", "Some of the projects I worked on"))
 
-let {
-  fetching,
-  error,
-  data
-} = await useGetProjectsQuery()
-const projects = data.value?.project!
-</script>
+definePageMeta({ layout: "blog-layout" })
 
-<script lang="ts">
-export default {
-  name: "ProjectsPage",
-  layout: "blog-layout"
-}
+const { data, pending, error } = await useAsyncGql("getProjects")
+const projects = computed(() => data.value.project!)
 </script>
 
 <style scoped>

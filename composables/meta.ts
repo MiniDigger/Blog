@@ -3,39 +3,44 @@ import { RouteLocation, useRoute } from "vue-router"
 const suffix = "Mini's Corner"
 export const useBlogMeta = (title: string, description: string) => {
   const route = useRoute()
-  const formattedTitle = title ? (title + " | " + suffix) : suffix;
-  const canonical = baseUrl() + (route.fullPath.endsWith("/") ? route.fullPath : route.fullPath + "/")
+  const formattedTitle = title ? title + " | " + suffix : suffix
+  const canonical =
+    baseUrl() +
+    (route.fullPath.endsWith("/") ? route.fullPath : route.fullPath + "/")
   return {
     title: formattedTitle,
     link: [{ rel: "canonical", href: canonical }],
     meta: [
       { name: "title", content: formattedTitle },
-      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, maximum-scale=1",
+      },
       { hid: "description", name: "description", content: description },
       {
         name: "og:description",
-        content: description
+        content: description,
       },
       {
         name: "twitter:description",
-        content: description
+        content: description,
       },
       {
         name: "og:title",
-        content: formattedTitle
+        content: formattedTitle,
       },
       {
         name: "twitter:title",
-        content: formattedTitle
+        content: formattedTitle,
       },
       {
         name: "og:url",
-        content: canonical
+        content: canonical,
       },
       {
         name: "twitter:url",
-        content: canonical
-      }
+        content: canonical,
+      },
     ],
     script: [
       {
@@ -43,10 +48,13 @@ export const useBlogMeta = (title: string, description: string) => {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          itemListElement: generateBreadcrumbs(route)
-        })
-      }
-    ]
+          itemListElement: generateBreadcrumbs(route),
+        }),
+      },
+    ],
+    htmlAttrs: {
+      lang: "en",
+    },
   }
 }
 
@@ -60,7 +68,7 @@ function generateBreadcrumbs(route: RouteLocation) {
       "@type": "ListItem",
       position: i,
       name: guessTitle(split[i]),
-      item: baseUrl() + curr
+      item: baseUrl() + curr,
     })
   }
 

@@ -1,0 +1,8 @@
+schema: graphql/schema.graphql
+extensions:
+  endpoints:
+    Directus GraphQL Endpoint:
+      url: https://directus.benndorf.dev/graphql?access_token=frontend
+      headers:
+        user-agent: JS GraphQL
+      introspect: true

@@ -1,19 +1,26 @@
 <template>
   <template v-if="mobile">
-    <div class="menu-button" ref="menuButton" @click="toggleMenu">
+    <div ref="menuButton" class="menu-button" @click="toggleMenu">
       <span>Menu</span>
     </div>
   </template>
-  <div v-if="!mobile || menuOpen" :class="mobile ? 'menu' : ''" ref="menu">
+  <div v-if="!mobile || menuOpen" ref="menu" :class="mobile ? 'menu' : ''">
     <NuxtLink to="/" @click="toggleMenu">Home</NuxtLink>
     <NuxtLink to="/projects" @click="toggleMenu">Projects</NuxtLink>
     <NuxtLink to="/blog" @click="toggleMenu">Blog</NuxtLink>
+    <NuxtLink to="/games" @click="toggleMenu">Games</NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "@vue/reactivity"
-import { nextTick, onBeforeUnmount, onMounted, watch, watchEffect } from "@vue/runtime-core"
+import {
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  watch,
+  computed,
+  ref,
+} from "vue"
 
 const windowWidth = ref(1000)
 const menuOpen = ref(false)
@@ -34,7 +41,7 @@ onBeforeUnmount(() => {
 })
 
 // hide when resizing away from mobile
-watch(mobile, (newValue, oldValue) => {
+watch(mobile, (newValue) => {
   if (!newValue && menuOpen.value) {
     toggleMenu()
   }
@@ -53,8 +60,11 @@ function toggleMenu() {
 
 // close on outside click
 function onClick(event: MouseEvent) {
-  const menuClicked = menu.value === event.target || menu.value?.contains(event.target)
-  const menuButtonClicked = menuButton.value === event.target || menuButton.value?.contains(event.target)
+  const menuClicked =
+    menu.value === event.target || menu.value?.contains(event.target)
+  const menuButtonClicked =
+    menuButton.value === event.target ||
+    menuButton.value?.contains(event.target)
   if (menuOpen.value && !menuClicked && !menuButtonClicked) {
     toggleMenu()
   }

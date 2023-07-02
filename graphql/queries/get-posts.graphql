@@ -1,9 +1,9 @@
 query getPosts {
-    article (filter: {status: {_eq: "published"}}){
-        slug
-        title
-        subtitle
-        content
-        date_published
-    }
+  article(filter: { status: { _eq: "published" } }) {
+    slug
+    title
+    subtitle
+    content
+    date_published
+  }
 }

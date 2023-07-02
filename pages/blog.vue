@@ -1,42 +1,33 @@
 <template>
   <div>
-    <Loader :fetching="fetching" :error="error">
-      <article v-for="post in posts" class="teaser">
+    <Loader :fetching="pending" :error="error">
+      <article v-for="post in posts" :key="post.title" class="teaser">
         <NuxtLink :to="post?.slug">
           <h1>{{ post?.title }}</h1>
           <h2>{{ post?.subtitle }}</h2>
         </NuxtLink>
-        <small>posted on {{ post?.date_published}}</small>
+        <small>posted on {{ post?.date_published }}</small>
       </article>
     </Loader>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useGetPostsQuery } from "~/graphql/generated/operations"
+import { computed } from "vue"
 import Loader from "~/components/Loader.vue"
 import { useBlogMeta } from "~/composables/meta"
-import { useMeta } from "#meta"
+import { definePageMeta, useAsyncGql, useHead } from "#imports"
 
-useMeta(useBlogMeta("Projects", "My blog"));
+useHead(useBlogMeta("Projects", "My blog"))
 
-let {
-  fetching,
-  error,
-  data
-} = await useGetPostsQuery()
-const posts = data.value?.article!
-</script>
+definePageMeta({ layout: "blog-layout" })
 
-<script lang="ts">
-export default {
-  name: "HomePage",
-  layout: "blog-layout"
-}
+const { data, pending, error } = await useAsyncGql("getPosts")
+const posts = computed(() => data.value.article!)
 </script>
 
 <style>
-article.teaser  {
+article.teaser {
   margin: 1rem;
   padding: 2rem;
   box-shadow: black 3px 3px 10px -5px;

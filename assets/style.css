@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 :root {
   --bg-color: #1f2235;
   --bg-color-dark: #23263a;
@@ -7,7 +7,7 @@
 }
 
 html {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: var(--font-color);
@@ -30,7 +30,8 @@ small {
   font-size: 0.8rem;
 }
 
-h1,h2 {
+h1,
+h2 {
   margin-bottom: 1.5rem;
   font-weight: 600;
 }

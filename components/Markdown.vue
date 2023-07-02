@@ -3,8 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "@vue/reactivity"
+import { computed } from "vue"
 import { Remarkable } from "remarkable"
+import hljs from "highlight.js"
+import "highlight.js/styles/rainbow.css"
 
 const props = defineProps<{
   source: string
@@ -12,37 +14,29 @@ const props = defineProps<{
 
 const html = computed(() => {
   return new Remarkable("full", {
-    highlight
+    highlight,
   }).render(props.source)
 })
-</script>
-
-<script lang="ts">
-import hljs from "highlight.js"
-import 'highlight.js/styles/rainbow.css'
 
 function highlight(str: string, lang: string): string {
   if (lang && hljs.getLanguage(lang)) {
     try {
-      return hljs.highlight(str, {language: lang}).value
-    } catch (err) {
-    }
+      return hljs.highlight(str, { language: lang }).value
+    } catch (err) {}
   }
 
   try {
     return hljs.highlightAuto(str).value
-  } catch (err) {
-  }
+  } catch (err) {}
 
   return ""
 }
 </script>
 
 <style>
-
 article img,
 pre,
-blockquote  {
+blockquote {
   margin: 2rem 1rem 2rem 1rem;
   padding: 2rem;
   box-shadow: black 3px 3px 10px -5px;

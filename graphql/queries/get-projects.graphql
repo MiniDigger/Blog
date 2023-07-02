@@ -1,7 +1,7 @@
 query getProjects {
-    project {
-        title
-        description
-        link
-    }
+  project {
+    title
+    description
+    link
+  }
 }
