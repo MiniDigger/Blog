@@ -23,6 +23,6 @@
     "highlight.js": "^11.8.0",
     "nuxt-graphql-client": "^0.2.27",
     "remarkable": "2.0.1",
-    "reset-css": "5.0.1"
+    "reset-css": "5.0.2"
   }
 }
